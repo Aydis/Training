@@ -4,6 +4,8 @@ aydis: c-asm.c m.s
 float: float.c m.s
 	/usr/bin/riscv64-unknown-elf-gcc -O0 -nostdlib -march=rv32i -mabi=ilp32 -Wl,-Tm.ld m.s float.c -S
 
+double: double.c m.s
+	/usr/bin/riscv64-unknown-elf-gcc -O0 -nostdlib -march=rv32i -mabi=ilp32 -Wl,-Tm.ld m.s double.c -S
 
 
 startqemu: main.elf
