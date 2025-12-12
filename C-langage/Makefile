@@ -7,6 +7,8 @@ float: float.c m.s
 double: double.c m.s
 	/usr/bin/riscv64-unknown-elf-gcc -O0 -nostdlib -march=rv32i -mabi=ilp32 -Wl,-Tm.ld m.s double.c -S
 
+const: const.c m.s
+	/usr/bin/riscv64-unknown-elf-gcc -O0 -nostdlib -march=rv32i -mabi=ilp32 -Wl,-Tm.ld m.s const.c -S
 
 startqemu: main.elf
 	qemu-system-rv32i -S -M virt -nographic -bios none -kernel main.elf -gdb tcp::1234
