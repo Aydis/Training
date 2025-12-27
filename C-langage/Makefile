@@ -25,4 +25,4 @@ connectgdb: main.elf
 	gdb-multiarch main.elf -ex "target remote localhost:1234" -ex "break _start" -ex "continue" -q
 
 clean :
-	rm -rf *.out *.bin *.elf c-asm.s float.s double.s const.s demo-if-else.s
+	rm -rf *.out *.bin *.elf c-asm.s float.s double.s const.s demo-if-else.s m.s a.out
