@@ -4,40 +4,48 @@
 
 void main(){
 
-    int number1=0, number2=0, answer=0;
+    float number1=0, number2=0, answer=0;
     char opt=0;
     char moreCalcultations;
+    int invalid=0;
 
     printf("wecome to calculator APP\n");
     do {
-        printf("Enter number 1: ");
-        scanf("%d", &number1);
+        printf("Enter first number: ");
+        scanf("%f", &number1);
         
-        printf("Enter number 2: ");
-        scanf("%d", &number2);
+        printf("Enter second number 2: ");
+        scanf("%f", &number2);
 
-        printf("select an operation : (+ , - , * , / ) : ");
-        scanf("\n%c", &opt);
+        do {
 
-        printf("\nopt: char: %c, dec : %d \n", opt, opt);  
+            printf("select an operation : (+ , - , * , / ) : ");
+            scanf("\n%c", &opt);
 
-        switch (opt)
-        {
-        case '+' : answer = number1 + number2;
-            break;
-        
-        case '-' : answer = number1 - number2;
-            break;
-        
-        case '*' : answer = number1 * number2;
-            break;
-        
-        case '/' : answer = number1 / number2;
-            break;
-        
-        default: printf("invalid operation. Existing.\n");
-            return; 
-        }
+            invalid=0;
+    
+            switch (opt)
+            {
+            case '+' : 
+                answer = number1 + number2;
+                break;
+            
+            case '-' : 
+                answer = number1 - number2;
+                break;
+            
+            case '*' : 
+                answer = number1 * number2;
+                break;
+            
+            case '/' : 
+                answer = number1 / number2;
+                break;
+            
+            default: printf("invalid operation. Existing.\n");
+                invalid=1;
+            }
+    }       while (invalid ==1);
 
         /*if (opt==1) {
             answer = number1 +number2;
@@ -52,10 +60,12 @@ void main(){
             return;
         }*/
 
-        printf("Result : Operation # %d\n: %d\n", opt, answer);
+        printf("Result : Operation # %c\n: %f\n", opt, answer);
 
         printf("Do another calculations (y/n)?");
         scanf("\n%c", &moreCalcultations);
     } while (moreCalcultations=='y');
+
+    printf("Thanks for using our calculator program. Goodbye!\n");
 }
 
