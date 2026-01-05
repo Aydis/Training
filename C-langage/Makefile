@@ -15,7 +15,7 @@ demo-if: demo-if-else.c m.s
 	/usr/bin/riscv64-unknown-elf-gcc -O0 -nostdlib -march=rv32i -mabi=ilp32 -Wl,-Tm.ld m.s demo-if-else.c -S
 
 main-elf: demo-if-else.c m.s
-	/usr/bin/riscv64-unknown-elf-gcc -O0 -ggdb -nostdlib -march=rv32i -mabi=ilp32 -Wl,-Tm.ld m.s demo-if-else.c -o main.elf
+	/usr/bin/riscv64-unknown-elf-gcc -O0 -ggdb -nostdlib -march=rv32i -mabi=ilp32 -Wl,-Tm.ld mgit .s demo-if-else.c -o main.elf
 	/usr/bin/riscv64-unknown-elf-objcopy -O binary main.elf main.bin
 startqemu: main.elf
 	qemu-system-riscv32 -S -M virt -nographic -bios none -kernel main.elf -gdb tcp::1234
