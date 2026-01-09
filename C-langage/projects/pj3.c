@@ -73,7 +73,7 @@ int main(){
 
         printf("Enter sensor Name: "); // Read sensor Name  
         scanf("%s", tmp.name);
-        scanf("%*c"); // Clear newline character from input buffer
+        scanf("%*c"); // Clear newline character from input buffergit
 
         char type;
         printf("Enter sensor Type (t - temperature, h - humidity, p - pressure): ");
